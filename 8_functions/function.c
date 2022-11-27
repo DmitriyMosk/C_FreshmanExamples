@@ -24,7 +24,7 @@ void test3(int N, int arr[][3]) { // **arr - dynamic; arr[][size] - static
 
 void test4(int a, int b);
 
-void main() {
+void main(int argc, char *argv[]) { // todo argc argv[] example
     
     int a = 1;
     int b = 1;
