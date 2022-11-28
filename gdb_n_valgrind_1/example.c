@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 
-#define MAX(a, b) (a > b ? a : b)
+#define MAX(a, b) a > b ? a : b;
 
 int test(int *a, int b) {
 
@@ -12,8 +12,21 @@ int test(int *a, int b) {
 
 int main(int argc, char *argv[]) {
 
+    int num;
+    do {
+        printf("Enter a positive integer:");
 
-    for (int i = 0; i < 5; i++) {
+        scanf("%d", &num);
+    } while (num < 0);
+
+    int factorial;
+    for (int i = 1; i <= num; i++) {
+        factorial = factorial * i;
+    }
+
+    printf("%d! = %d\n", num, factorial);
+
+    for (int i = 0; i < 10; i++) {
         printf("%d\n", i);
     }
 
@@ -22,6 +35,8 @@ int main(int argc, char *argv[]) {
     test(&a, b);
     printf("%d %d\n", a, b);
 
+    int max = MAX(2, 1 + 2) + 1;
+    printf("max(2, 1 + 2) + 1 = %d\n", max); // 4?
 
     int *arr = (int *)malloc(5*sizeof(int));
 
