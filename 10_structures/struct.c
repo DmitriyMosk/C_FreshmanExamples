@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <malloc.h>
+#include <stdlib.h> // rand
 
 // Пример структуры комплексного числа
 struct complex {
     int re;
     int im;
 };
+
+typedef int qwerty;
+
+qwerty a; // это int a;
 
 // complex_t тоже самое что и struct complex
 typedef struct complex complex_t;
@@ -27,6 +32,13 @@ struct example {
 } variable;
 // variable глобальная переменная
 
+complex_t init_complex() {
+    complex_t tmp;
+    tmp.re = rand();
+    tmp.im = rand();
+    return tmp;
+}
+
 person_t *init() {
     person_t *tmp = malloc(sizeof(person_t));
     return tmp;
@@ -43,6 +55,7 @@ int main() {
     c.re = -5;
     c.im = 2;
     printf("%d + j*(%d)\n", c.re, c.im);
+    // c = init_complex();
 
     // pointer to struct
     person_t *p = init();
