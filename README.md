@@ -29,3 +29,18 @@ int **s = &p;
     | |=|  | 2 | null |<-------------|---=  | 3 | null |  
     |-----------------|              |-----------------|    
     */  
+    
+   list_p = first_down;  
+  
+    while (1) {  
+        printf("%d %p %p\n", list_p->val, list_p->prev, list_p->next);  
+        if (list_p->prev)  
+            list_p = list_p->prev;  
+        else if (list_p->next)  
+            list_p = list_p->next;  
+        else  
+            exit(1);  
+          
+        sleep(1);  
+  
+    }  
